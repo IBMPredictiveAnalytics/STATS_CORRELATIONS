@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>Bivariate Correlations with Confidence Intervals</title>
+<STYLE TYPE="text/css"> 
+<!-- 
+
+H1 {font-weight:bold; color:#006699; font-family:Verdana, Arial, sans-serif;font-size:125%; }
+H2 {font-weight:bold; color:#006699; font-family:Verdana, Arial, sans-serif;font-size:110%; }
+BODY {font-family:Verdana, Arial, sans-serif;font-size:80%; }
+TABLE {font-size:100%;font-family:Verdana, Arial, sans-serif;}
+
+/* paragraph tags */
+.step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+.step-glyph { font-family: Arial, Helvetica, sans-serif; }
+.menuselection {margin-left:10px}
+.bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+.codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;font-family:"courier new",monospace; }
+
+/* inline tags */
+.code {font-family: Courier,fixed pitch;}                           /*** used to tag pieces of code (syntax, Python, R, HTML, etc.)   ***/
+.screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+.name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+.runinhead {font-weight: bold} 
+.superscript {vertical-align:super; font-size:80%}
+.subscript {vertical-align:sub; font-size:80%}
+.symbol {font-family: Symbol}
+
+--> 
+</STYLE>
+</head>
+<body>
+<h1>Bivariate Correlations with Confidence Intervals</h1>
+<p>This procedure computes bivariate correlations and asymptotic (Fisher)
+confidence intervals.  Variables with a nominal measurement level are excluded.</p>
+
+
+<p><span class="runinhead">Variables</span>
+Choose the variables for a square correlation matrix, i.e., the correlation of each
+variable with every other is produced.</p>
+
+<p><span class="runinhead">With Variables</span> 
+If variables are put in this list, then only the correlations of the variables
+in the first list with the variables listed here are produced.  For example, if there are
+five variables in the first list and two in the second, ten correlations are produced.
+</p>
+
+
+<p><span class="runinhead">Confidence Level</span> 
+Enter the desired confidence level for the confidence interval as a percentage.
+</p>
+
+<p><span class="runinhead">Confidence Interval Estimation</span> 
+Choose Fisher to use the Fisher transformation based on the approximate
+normality of the Z-transform of the correlation.  Choose Bootstrap to calculate
+bootstrap confidence intervals.</p>
+<p class="bullet">&bull;Bootstrap requires that the bootstrap option is licensed.
+Otherwise, an error will occur.</p>
+
+
+<p><span class="runinhead">User Missing Values</span> 
+Choose pairwise deletion to maximize the use of the data or
+listwise deletion for a consistent case base for each correlation.
+You can alternatively choose to treat missing values as valid.
+System-missing values (sysmis) are always excluded.
+</p>
+
+<p>
+SPLIT FILES is supported.
+</p>
+<p>Thanks to Bruce Weaver for assistance with this procedure.</p>
+
+<h2>Additional Features</h2>
+Run the command<br>
+STATS CORRELATIONS /HELP.<br>
+or in Statistics version 23 or later press F1 with the cursor in the command
+to display the syntax help.
+</p>
+<p>TO and ALL are supported in variable lists in Statistics 23 or later.</p>
+
+
+<h2>Requirements</h2>
+This command requires the Python Programmability Plug-in,
+</p>
+  <hr>
+  <p style="font-family:Verdana, Arial, sans-serif;font-size:80%;">
+  © Portions Copyright IBM Corp. 2016</p>
+</body>
+</html>
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>STATS CORRELATIONS Extension Command</title>
+
+<link rel="stylesheet" type="text/css" href="extsyntax.css" />
+
+
+
+
+
+</head>
+
+<body>
+<h1>STATS CORRELATION Extension Command</h1>
+
+<p>Calculate Pearson correlations and confidence intervals.
+The correlations are actually calculated by the built-in CORRELATIONS
+procedure, the output from which is used in calculating the confidence
+intervals.</p>
+<div class="syntax">
+<p>STATS CORRELATIONS 
+VARIABLES=<em>variable list</em><sup>&#42;</sup><br/>
+</p>
+<p>/WITH<br/>
+VARIABLES=<em>variable list</em><br/>
+</p>
+<p>/OPTIONS<br/>
+CONFLEVEL = <em>confidence level as percentage</em><br/>
+METHOD = FISHER<sup>&#42;&#42;</sup> or BOOTSTRAP<br/>
+<p>
+<p>/MISSING<br/>
+PAIRWISE=YES<sup>&#42;&#42;</sup> or LISTWISE=YES<BR/>
+EXCLUDE=YES<sup>&#42;&#42;</sup> or INCLUDE=YES<br/>
+</p>
+
+<p>/HELP</p>
+
+<p><sup>&#42;</sup> Required<br/>
+<sup>&#42;&#42;</sup> Default</p>
+</div>
+<p>STATS CORRELATIONS /HELP.  prints this information and does nothing else.</p>
+
+<pre class="example"><code>STATS CORRELATIONS VARIABLES=x y z
+/WITH VARIABLES=w
+/OPTIONS CONFLEVEL=90.
+</code></pre>
+<p>The first <strong>VARIABLES</strong> keyword and <strong>VARIABLES</strong> on the <strong>WITH</strong>
+subcommand specify the variables to be correlated.  If only the first VARIABLES
+keyword is used, a square correlation matrix is calculated.  If /WITH VARIABLES
+is also given, then only the correlations of the first set of variables with the
+second set are calculated.  For example, if there are
+five variables in the first list and two in the second, ten correlations are produced.
+Note that <strong>WITH</strong> is a subcommand here rather than appearing within a variable list.
+</p>
+
+<h2>OPTIONS</h2>
+<p><strong>CONFLEVEL</strong> specifies the level for the confidence interval as a
+percentage.  The default is 95.
+</p>
+<p><strong>METHOD</strong> specifies how the intervals are calculated.  <strong>FISHER</strong>
+uses the approximate normality of the Z transform of the correlation.  <strong>BOOTSTRAP</strong>
+calculates bootstrap intervals.  This requires that the Bootstrap option for Statistics be
+installed.  Otherwise, an error is generated.</p>
+
+<h2>MISSING</h2>
+This subcommand specifies how user missing values are treated.  System missing values
+are always excluded.  Missing value deletion can be <strong>PAIRWISE</strong>,
+which is the default, or
+<strong>LISTWISE</strong>.  Note that these keywords require YES or NO, which is
+different from their usage in other procedures.
+</p>
+<p><strong>EXCLUDE</strong> is the default and excludes user missing values.
+<strong>INCLUDE</strong> includes user missing values as if they were valid values.
+</p>
+<p>Thanks to Bruce Weaver for assistance with this procedure.</p>
+<p>&copy; Portions Copyright IBM Corp. 1989, 2016</p>
+
+</body>
+
+</html>
+

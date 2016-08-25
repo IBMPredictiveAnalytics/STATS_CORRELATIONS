@@ -1,0 +1,16 @@
+Name: STATS CORRELATIONS
+Dialog-Specs: STATS_CORRELATIONS.spd
+Command-Specs: STATS_CORRELATIONS.xml
+Code-Files: STATS_CORRELATIONS.py
+Misc-Files: STATS_CORRELATIONS_TESTS.sps,extsyntax.css,markdown.html,S
+ TATS_CORRELATIONS.htm
+Summary: Pairwise correlations with confidence intervals
+Description: This procedure computes pairwise correlations the same as
+  the built-in CORRELATIONS procedure but adds Fisher or bootstrap con
+ fidence intervals.
+Author: JKP, IBM SPSS
+Version: 1.0.0
+Product-Version: 18
+Date: 7/14/16
+Categories: statistics
+Plugins: Python
