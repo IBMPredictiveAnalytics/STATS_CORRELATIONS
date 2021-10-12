@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><Extension debug="false" version="1.0" xmlns="http://spss.com/clementine/extensions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://spss.com/clementine/extensions http://xml.spss.com/clementine/extensions/CLEFSpecificationFile.xsd">
+  <ExtensionDetails copyright="Licensed Materials - Property of IBM.  IBM SPSS Products: Statistics Common (C) Copyright IBM Corp. 1989, 2016.  US Government Users Restricted Rights - Use, duplication or  disclosure restricted by GSA ADP Schedule Contract with IBM Corp." description="" id="STATS_CORRELATIONS" label="" provider="SPSS, Inc." providerTag="spss" version="1.0"/>
+  <Resources>
+    <Bundle id="bundle1" path="STATS_CORRELATIONS" type="properties"/>
+  </Resources>
+  <CommonObjects>
+    <Actions>
+      <Action id="STATS_CORRELATIONS_action" imagePath="IBMdialogicon.png" label="Bivariate with Confidence Intervals..." labelKey="STATS_CORRELATIONS_action.LABEL"/>
+    </Actions>
+  </CommonObjects>
+  <UserInterface>
+    <Controls>
+      <MenuItem action="STATS_CORRELATIONS_action" offset="0" previousId="" showIcon="true" spssMenu="Analyze.analyze_correlate"/>
+    </Controls>
+  </UserInterface>
+  <Node id="STATS_CORRELATIONS" label="Bivariate Correlations with Confidence Intervals" labelKey="STATS_CORRELATIONS.LABEL" type="modelBuilder">
+    <Properties>
+      <Property addOns="[Python]" name="STATS_CORRELATIONS" syntax="STATS CORRELATIONS %%variables%%&#10;%%withvars%%&#10;/OPTIONS %%conflevel%% %%method%%&#10;%%missingvalues%%&#10;"/>
+      <Property description="false" name="STATS_CORRELATIONS_modal"/>
+      <Property description="" descriptionKey="source_vars_tooltip.LABEL" isList="true" label="Source Variables:" labelKey="source_vars.LABEL" name="source_vars" selectionPool="source_fields" syntax="%%ThisValue%%" valueType="field"/>
+      <Property description="" descriptionKey="variables_tooltip.LABEL" isList="true" isRequired="true" label="Variables:" labelKey="variables.LABEL" name="variables" selectionPool="source_fields" syntax="VARIABLES=%%ThisValue%%" valueType="field"/>
+      <Property defaultValue="95" description="" descriptionKey="conflevel_tooltip.LABEL" isRequired="true" label="Confidence Level(%)" labelKey="conflevel.LABEL" max="99.999900" min="25.000000" name="conflevel" syntax="CONFLEVEL=%%ThisValue%%" valueType="double"/>
+      <Property description="If supplied, only the correlations of the variables in the first set with these variables is reported" descriptionKey="withvars_tooltip.LABEL" isList="true" label="With Variables:" labelKey="withvars.LABEL" name="withvars" selectionPool="source_fields" syntax="/WITH VARIABLES=%%ThisValue%%" valueType="field"/>
+      <Property defaultValue="item_114_a" description="" descriptionKey="missingvalues_tooltip.LABEL" label="User Missing Values" labelKey="missingvalues.LABEL" name="missingvalues" syntax="/MISSING %%ThisValue%%" valueType="enum">
+        <Enumeration>
+          <Enum description="" descriptionKey="item_114_a_tooltip.LABEL" hasSubGroup="false" label="Exclude (pairwise deletion)" labelKey="item_114_a.LABEL" mnemonic="E" mnemonicKey="item_114_a_mnemonic.VALUE" syntax="EXCLUDE=YES PAIRWISE=YES" value="item_114_a"/>
+          <Enum description="" descriptionKey="item_114_b_tooltip.LABEL" hasSubGroup="false" label="Exclude (listwise deletion)" labelKey="item_114_b.LABEL" mnemonic="X" mnemonicKey="item_114_b_mnemonic.VALUE" syntax="EXCLUDE=YES LISTWISE=YES" value="item_114_b"/>
+          <Enum description="" descriptionKey="missingvalues_c_tooltip.LABEL" hasSubGroup="false" label="Include" labelKey="missingvalues_c.LABEL" mnemonic="I" mnemonicKey="missingvalues_c_mnemonic.VALUE" syntax="INCLUDE=YES" value="missingvalues_c"/>
+        </Enumeration>
+      </Property>
+      <Property defaultValue="item_128_a" description="" descriptionKey="method_tooltip.LABEL" label="Confidence Interval Estimation" labelKey="method.LABEL" name="method" syntax="METHOD=%%ThisValue%%" valueType="enum">
+        <Enumeration>
+          <Enum description="" descriptionKey="item_128_a_tooltip.LABEL" hasSubGroup="false" label="Fisher" labelKey="item_128_a.LABEL" mnemonic="F" mnemonicKey="item_128_a_mnemonic.VALUE" syntax="FISHER" value="item_128_a"/>
+          <Enum description="Requires the bootstrap option" descriptionKey="item_128_b_tooltip.LABEL" hasSubGroup="false" label="Bootstrap (requires the bootstrap option)" labelKey="item_128_b.LABEL" mnemonic="B" mnemonicKey="item_128_b_mnemonic.VALUE" syntax="BOOTSTRAP" value="item_128_b"/>
+        </Enumeration>
+      </Property>
+    </Properties>
+    <SelectionPool id="source_fields" type="fields"/>
+    <UserInterface>
+      <Tabs>
+        <Tab helpLink="STATS_CORRELATIONS.htm">
+          <PropertiesPanel>
+            <SourceFieldsBrowser copyFields="false" mnemonic="S" mnemonicKey="source_vars_mnemonic.VALUE" property="source_vars" selectionPool="source_fields" storage="[real integer date time]" types="[orderedSet range]">
+              <Layout columnWeight="1.0" fill="both" gridColumn="0" gridRow="0" gridWidth="1" rowWeight="1.0"/>
+            </SourceFieldsBrowser>
+            <MultiFieldChooserControl mnemonic="V" mnemonicKey="variables_mnemonic.VALUE" property="variables" storage="[real integer date time string]" types="[orderedSet range]">
+              <Layout columnWeight="1.0" fill="both" gridColumn="2" gridRow="0" gridWidth="1" rowWeight="1.0"/>
+            </MultiFieldChooserControl>
+            <TextBoxControl mnemonic="C" mnemonicKey="conflevel_mnemonic.VALUE" property="conflevel">
+              <Layout columnWeight="1.0" fill="horizontal" gridColumn="2" gridRow="2" gridWidth="1" rowWeight="0.0"/>
+            </TextBoxControl>
+            <MultiFieldChooserControl mnemonic="W" mnemonicKey="withvars_mnemonic.VALUE" property="withvars" storage="[real integer date time string]">
+              <Layout columnWeight="1.0" fill="both" gridColumn="2" gridRow="1" gridWidth="1" rowWeight="1.0"/>
+            </MultiFieldChooserControl>
+            <RadioButtonGroupControl property="missingvalues" rows="3" useSubPanel="false">
+              <Layout columnWeight="1.0" fill="both" gridColumn="2" gridRow="4" gridWidth="1" rowWeight="1.0"/>
+              <RadioButton property="item_114_a"/>
+              <RadioButton property="item_114_b"/>
+              <RadioButton property="missingvalues_c"/>
+            </RadioButtonGroupControl>
+            <RadioButtonGroupControl property="method" rows="2" useSubPanel="false">
+              <Layout columnWeight="1.0" fill="both" gridColumn="2" gridRow="3" gridWidth="1" rowWeight="1.0"/>
+              <RadioButton property="item_128_a"/>
+              <RadioButton property="item_128_b"/>
+            </RadioButtonGroupControl>
+            <StaticText text="This dialog was created using a later version of IBM SPSS Statistics\nand certain features may not function as intended." textKey="v17_warning.LABEL">
+              <Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="1" gridWidth="1" rowWeight="1.0"/>
+            </StaticText>
+          </PropertiesPanel>
+        </Tab>
+      </Tabs>
+    </UserInterface>
+  </Node>
+</Extension>
