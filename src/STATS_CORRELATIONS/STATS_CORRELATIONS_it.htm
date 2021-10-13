@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=utf-8">
+<title>Correlazioni di bivariate con intervalli di confidenza</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  --> 
+  </style>
+</head>
+<body>
+<h1>Correlazioni di bivariate con intervalli di confidenza</h1>
+<p>Questa procedura calcola le correlazioni bivariate e gli intervalli di confidenza
+asintotici (Fisher). Le variabili con un livello di misurazione nominale sono esclusi.</p>
+
+
+<p><span class="runinhead">Variabili</span>
+Scegliere le variabili per una matrice di correlazione quadrata, ossia viene
+prodotta la correlazione di ciascuna variabile con ogni altra.</p>
+
+<p><span class="runinhead">Con variabili</span>
+Se le variabili vengono inserite in questo elenco, vengono prodotte solo le
+correlazioni delle variabili nel primo elenco con le variabili elencate qui. Ad esempio,se
+ci sono cinque variabili nel primo elenco e due nel secondo, vengono prodotte dieci correlazioni.
+</p>
+
+
+<p><span class="runinhead">Livello di confidenza</span>
+Immettere il livello di confidenza desiderato per l'intervallo di confidenza come una percentuale.
+</p>
+
+<p><span class="runinhead">Stima intervallo di confidenza</span>
+Scegliere Fisher per utilizzare la trasformazione di Fisher basata sulla
+normalità approssimativa della trasformazione Z della correlazione. Scegliere Bootstrap per calcolare
+gli intervalli di confidenza di bootstrap.</p>
+<p class="bullet">&bull;Bootstrap richiede che l'opzione di bootstrap sia fornita in licenza.
+In caso contrario, si verificherà un errore.</p>
+
+
+<p><span class="runinhead">Valori mancanti dell'utente</span>
+Scegliere l'eliminazione pairwise per massimizzare l'utilizzo dei dati
+oppure l'eliminazione listwise per una base di casi congruente per ogni correlazione.
+In alternativa, è possibile scegliere di trattare i valori mancanti come validi.
+I valori mancanti del sistema (sysmis) vengono sempre esclusi.
+</p>
+
+<p>
+SPLIT FILES è supportato.
+</p>
+<p>Grazie a Bruce Weaver per l'assistenza con questa procedura.</p>
+
+<h2>Funzioni aggiuntive</h2>
+Eseguire il comando<br>
+STATS CORRELATIONS /HELP.<br>
+oppure in Statistics versione 23 o successive premere F1 con il cursore nel comando
+per visualizzare la guida della sintassi.
+</p>
+<p>TO e ALL sono supportati negli elenchi variabili in Statistics 23 o successive.</p>
+
+
+<h2>Requisiti</h2>
+Questo comando richiede il plug-in di programmabilità Python.
+</p>
+  <hr>
+  <p style="font-size:80%;">
+ Copyright IBM Corp. 2016</p>
+</body>
+</html>
+

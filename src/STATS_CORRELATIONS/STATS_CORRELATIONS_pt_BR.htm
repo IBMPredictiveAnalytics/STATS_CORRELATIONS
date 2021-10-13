@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=utf-8">
+<title>Correlações bivariadas com intervalos de confiança</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  --> 
+  </style>
+</head>
+<body>
+<h1>Correlações bivariadas com intervalos de confiança</h1>
+<p>Este procedimento calcula as correlações bivariadas e os intervalos de confiança assintóticos (Fisher).  Variáveis com um nível de medição nominal são excluídas.</p>
+
+
+<p><span class="runinhead">Variáveis</span>: escolha as variáveis para uma matriz de correlação quadrada, ou seja, é produzida a correlação de cada variável com todas as outras.</p>
+
+<p><span class="runinhead">Com variáveis</span>: se forem colocadas variáveis nessa lista, somente as correlações das variáveis na primeira lista com as variáveis listadas aqui serão produzidas.  Por exemplo, se houver cinco variáveis na primeira lista e duas na segunda, dez correlações serão produzidas.
+</p>
+
+
+<p><span class="runinhead">Nível de confiança</span>: insira o nível de confiança desejado para o intervalo de confiança como uma porcentagem.
+</p>
+
+<p><span class="runinhead">Estimação de intervalo de confiança</span>: escolha Fisher para usar a transformação Fisher baseada na normalidade aproximada da transformação Z da correlação.  Escolha Autoinicialização para calcular intervalos de confiança de autoinicialização.</p>
+<p class="bullet">&bull;A autoinicialização requer que a opção de autoinicialização seja licenciada.
+Caso contrário, ocorrerá um erro.</p>
+
+
+<p><span class="runinhead">Valores ausentes do usuário</span>: escolha Exclusão pairwise para maximizar o uso dos dados ou Exclusão listwise para uma base de caso consistente para cada correlação.
+Como alternativa, é possível optar por tratar os valores ausentes como válidos.
+Os valores ausentes do sistema (sysmis) são sempre excluídos.
+</p>
+
+<p>
+SPLIT FILES é suportado.
+</p>
+<p>Obrigado, Bruce Weaver, pela assistência com este procedimento.</p>
+
+<h2>Recursos adicionais</h2>
+Execute o comando<br>
+STATS CORRELATIONS /HELP.<br>
+ou, em Statistics versão 23 ou posterior, pressione F1 com o cursor no comando para exibir a ajuda de sintaxe.
+</p>
+<p>TO e ALL são suportados nas listas de variáveis em Statistics 23 ou posterior.</p>
+
+
+<h2>Requisitos</h2>
+Esse comando requer o Python Programmability Plug-in,
+</p>
+  <hr>
+  <p style="font-size:80%;">
+ Copyright IBM Corp. 2016</p>
+</body>
+</html>
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=utf-8">
+<title>Bivariate Korrelationen mit Konfidenzintervallen</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  --> 
+  </style>
+</head>
+<body>
+<h1>Bivariate Korrelationen mit Konfidenzintervallen</h1>
+<p>Mit dieser Prozedur werden bivariate Korrelationen und asymptotische Konfidenzintervalle (Fisher) berechnet.
+Variablen mit einem nominalen Messniveau werden ausgeschlossen.</p>
+
+
+<p><span class="runinhead">Variablen</span>
+Wählen Sie die Variablen für eine quadratische Korrelationsmatrix aus,
+d. h. es wird eine Korrelation jeder Variablen mit jeder anderen hergestellt.</p>
+
+<p><span class="runinhead">Mit Variable</span>
+Werden Variablen in diese Liste aufgenommen, so werden nur die Korrelationen der Variablen
+in der ersten Liste mit den hier aufgeführten Variablen erstellt. Wenn zum Beispiel fünf Variablen in der ersten Liste
+und zwei in der zweiten Liste enthalten sind, ergeben sich zehn Korrelationen.
+</p>
+
+
+<p><span class="runinhead">Konfidenzniveau</span>
+Geben Sie das gewünschte Konfidenzniveau für das Konfidenzintervall in Prozent ein.
+</p>
+
+<p><span class="runinhead">Konfidenzintervallschätzung</span>
+Wählen Sie 'Fisher' aus, um die Fisher-Transformation zu verwenden, die auf der
+approximierten Normalität der Z-Transformation der Korrelation basiert. Wählen Sie 'Bootstrap' aus, um Bootstrap-Konfidenzintervalle zu berechnen.</p>
+<p class="bullet">&bull;Bootstrap setzt voraus, dass die Bootstrap-Option lizenziert ist.
+Andernfalls tritt ein Fehler auf.</p>
+
+
+<p><span class="runinhead">Benutzerdefiniert fehlende Werte</span>
+Wählen Sie die paarweise Löschung, um die Nutzung der Daten zu maximieren, oder die listenweise Löschung,
+um eine einheitliche Fallbasis für jede Korrelation zu erhalten.
+Alternativ können Sie auch fehlende Werte als gültig behandeln.
+Systemdefiniert fehlende Werte (sysmis) werden immer ausgeschlossen.</p>
+
+<p>
+SPLIT FILES wird unterstützt.
+</p>
+<p>Vielen Dank an Bruce Weaver für seiner Unterstützung bei dieser Prozedur.</p>
+
+<h2>Weitere Funktionen</h2>
+Führen Sie den folgenden Befehl aus:<br>
+STATS CORRELATIONS /HELP.<br>
+In Statistics ab Version 23 können Sie alternativ die Taste F1 drücken, wenn sich der Cursor auf dem Befehl
+befindet, um die Syntaxhilfe anzuzeigen.
+</p>
+<p>TO und ALL werden in Variablenlisten in Statistics ab Version 23 unterstützt.</p>
+
+
+<h2>Anforderungen</h2>
+Für diesen Befehl ist das Python Programmability Plug-in erforderlich.
+</p>
+  <hr>
+  <p style="font-size:80%;">
+ Copyright IBM Corp. 2016</p>
+</body>
+</html>
+
