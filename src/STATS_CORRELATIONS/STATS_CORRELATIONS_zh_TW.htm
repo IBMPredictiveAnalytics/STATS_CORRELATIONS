@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=utf-8">
+
+  <title>雙變數相關性與信賴區間</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  --> 
+  </style>
+</head>
+<body>
+<h1>雙變數相關性與信賴區間</h1>
+<p>此程序會計算雙變數及漸近 (Fisher) 信賴區間。排除具有名義測量層次的變數。</p>
+
+
+<p><span class="runinhead">變數</span>
+選擇方形相關性矩陣的變數，即，產生每一個變數與每個其他變數的相關性。</p>
+
+<p><span class="runinhead">具有變數</span>
+如果變數放置在此清單中，則僅產生具有這裡列出之變數的第一個清單中的變數的相關性。例如，如果第一個清單中有五個變數，而第二個清單中有兩個變數，則會產生十個相關性。</p>
+
+
+<p><span class="runinhead">信賴區間</span>
+以百分比形式輸入信賴區間的想要的信賴層次。
+</p>
+
+<p><span class="runinhead">信賴區間估計</span>
+選擇 Fisher 以基於相關性 Z 轉換的近似常態來使用 Fisher 轉換。選擇 Bootstrap 以計算引導信賴區間。</p>
+<p class="bullet">&bull; 引導需要授權引導選項。否則，將發生錯誤。</p>
+
+
+<p><span class="runinhead">使用者遺漏值</span>
+選擇成對刪除，以最大化每一個相關性之一致案例基礎的資料使用或整批刪除。或者，您可以選擇將遺漏值視為有效。一律排除系統遺漏值 (sysmis)。</p>
+
+<p>
+支援 SPLIT FILES。
+</p>
+<p>謝謝 Bruce Weaver 提供此程序的協助。</p>
+
+<h2>其他特性</h2>
+執行指令<br>
+STATS CORRELATIONS /HELP.<br>
+或者在 Statistics 第 23 版或更新版本中，在游標位於指令中時按下 F1，以顯示語法說明。
+</p>
+<p>Statistics 23 或更新版本中的變數清單中支援 TO 及 ALL。</p>
+
+
+<h2>需求</h2>
+此指令需要 Python Programmability Plug-in，</p>
+  <hr>
+  <p style="font-size:80%;">
+ Copyright IBM Corp. 2016</p>
+</body>
+</html>
+

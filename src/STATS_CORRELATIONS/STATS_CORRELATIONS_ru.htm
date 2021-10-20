@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=utf-8">
+<title>Парные корреляции с доверительными интервалами</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  --> 
+  </style>
+</head>
+<body>
+<h1>Парные корреляции с доверительными интервалами</h1>
+<p>Эта процедура вычисляет двумерные корреляции и асимптотические доверительные интервалы (Фишера).
+Переменные с номинальным уровнем измерения исключаются.</p>
+
+
+<p><span class="runinhead">Переменные</span>
+Выберите переменные для квадратной корреляционной матрицы, то есть вычисления корреляции каждой переменной с каждой другой переменной.
+</p>
+
+<p><span class="runinhead">С переменными</span>
+Если переменные включены в этот список, выводятся только корреляции переменных из первого списка с перечисленными здесь переменными.
+Например, если в первом списке - пять переменных, а во втором - две, получится десять корреляций.
+</p>
+
+
+<p><span class="runinhead">Доверительный уровень</span>
+Введите требуемый доверительный уровень для доверительного интервала в процентах.
+</p>
+
+<p><span class="runinhead">Оценка доверительных интервалов</span>
+Выберите Фишер для использования преобразования Фишера на основе приблизительной нормальности Z-преобразования корреляции.
+Выберите Бутстреп для вычисления доверительных интервалов бутстрепа.
+</p>
+<p class="bullet">&bull;Для бутстрепа требуется, чтобы была лицензирована опция бутстрепа.
+В противном случае произойдет ошибка.</p>
+
+
+<p><span class="runinhead">Пользовательские значения отсутствия</span>
+Выберите попарное исключение, чтобы максимизировать использование данных или удаление по списку для содержательных наблюдений на основе каждой корреляции.
+Можно также выбрать для обработки пропущенных значений как допустимых.
+Системные значения отсутствия (sysmis) всегда исключаются.
+</p>
+
+<p>
+Поддерживается SPLIT FILES.
+</p>
+<p>Благодарю Брюса Уивера за помощь с этой процедурой.</p>
+
+<h2>Дополнительные возможности</h2>
+Введите команду<br>
+STATS CORRELATIONS /HELP.<br>
+или, в Statistics версии 23 или новее нажмите клавишу F1, когда указатель находится на команде, чтобы вывести справку по синтаксису.
+</p>
+<p>TO и ALL поддерживаются в списках переменных в Statistics 23 или новее.</p>
+
+
+<h2>Технические требования</h2>
+Для этой команды необходим подключаемый модуль программирования Python,
+</p>
+  <hr>
+  <p style="font-size:80%;">
+ Copyright IBM Corp. 2016</p>
+</body>
+</html>
+

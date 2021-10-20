@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=utf-8">
+<title>Correlaciones bivariadas con intervalos de confianza</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  --> 
+  </style>
+</head>
+<body>
+<h1>Correlaciones bivariadas con intervalos de confianza</h1>
+<p>Este procedimiento calcula correlaciones bivariadas e intervalos de confianza asintóticos (Fisher).  Las variables con un nivel de medición nominal se excluyen.</p>
+
+
+<p><span class="runinhead">Variables</span> Seleccione las variables para una matriz de correlaciones cuadrada, es decir, se produce la correlación de cada variable con todas las demás.</p>
+
+<p><span class="runinhead">Con variables</span>  Si se incluyen variables en esta lista, entonces solo se producen las correlaciones de las variables de la primera lista con las variables incluidas en esta lista.  Por ejemplo, si hay cinco variables en la primera lista y dos en la segunda, se producen diez correlaciones.
+</p>
+
+
+<p><span class="runinhead">Nivel de confianza</span>  Introduzca al nivel de confianza deseado para el intervalo de confianza en forma de porcentaje.
+</p>
+
+<p><span class="runinhead">Estimación del intervalo de confianza</span>  Seleccione Fisher para utilizar la transformación de Fisher en función de la normalidad aproximada de la transformación Z de la correlación.  Seleccione Simulación de muestreo para calcular intervalos de confianza de simulación de muestreo.</p>
+<p class="bullet">&bull;Para usar Simulación de muestreo es necesario disponer de licencia para la opción de simulación de muestreo.
+De lo contrario, se producirá un error.</p>
+
+
+<p><span class="runinhead">Valores perdidos de usuario</span>  Seleccione la eliminación por parejas para maximizar el uso de los datos o la eliminación por lista para disponer de una base coherente para los casos para cada correlación.
+Como alternativa, puede optar por tratar los valores perdidos como válidos.
+Los valores perdidos del sistema (sysmis) siempre se excluyen.
+</p>
+
+<p>
+Se admite SPLIT FILES.
+</p>
+<p>Gracias a Bruce Weaver por su ayuda en este procedimiento.</p>
+
+<h2>Características adicionales</h2>
+Ejecute el comando<br>
+STATS CORRELATIONS /HELP.<br>
+o en Statistics versión 23 o pulse F1 posteriormente con el cursor en el comando para visualizar la ayuda de la sintaxis.
+</p>
+<p>TO y ALL se admiten en las listas de variables en Statistics 23 o posterior.</p>
+
+
+<h2>Requisitos</h2>
+Este comando requiere el complemento de programabilidad de Python,
+</p>
+  <hr>
+  <p style="font-size:80%;">
+ Copyright IBM Corp. 2016</p>
+</body>
+</html>
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=utf-8">
+
+  <title>具有置信区间的双变量相关性</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  --> 
+  </style>
+</head>
+<body>
+<h1>具有置信区间的双变量相关性</h1>
+<p>此过程计算双变量相关性和渐近（费希尔）置信区间。将排除具有名义测量级别的变量。</p>
+
+
+<p><span class="runinhead">变量</span>
+为平方相关性矩阵（即，生成每个变量彼此之间的相关性）选择变量。</p>
+
+<p><span class="runinhead">使用变量</span>
+如果变量放在此列表中，将仅生成第一个列表中变量与此处列出的变量的相关性。例如，如果第一个列表中有五个变量，第二个列表中有两个变量，那么将生成 10 个相关性。
+</p>
+
+
+<p><span class="runinhead">置信度级别</span>
+输入置信区间的期望置信度级别，以百分比表示。
+</p>
+
+<p><span class="runinhead">置信区间估算</span>
+选择“费希尔”以基于相关性的 Z 转换的近似正态性使用费希尔转换。选择“拔靴法”以计算拔靴法置信区间。</p>
+<p class="bullet">&bull;拔靴法要求许可拔靴法选项。
+否则，将发生错误。</p>
+
+
+<p><span class="runinhead">用户缺失值</span>
+选择成对删除以充分利用数据，或为每个相关性的一致个案库选择成列删除。或者，您也可以选择将缺失值视为有效。
+将始终排除系统缺失值 (sysmis)。
+</p>
+
+<p>
+支持 SPLIT FILES。
+</p>
+<p>感谢 Bruce Weaver 对此过程的帮助。</p>
+
+<h2>其他功能部件</h2>
+运行命令<br>
+STATS CORRELATIONS /HELP。<br>
+或者，在 Statistics V23 或更高版本中，使用命令中的游标按 F1 以显示语法帮助。</p>
+<p>TO 和 ALL 在 Statistics 23 或更高版本中的变量列表中受支持。</p>
+
+
+<h2>要求</h2>
+此命令需要 Python Programmability 插件。
+</p>
+  <hr>
+  <p style="font-size:80%;">
+ Copyright IBM Corp. 2016</p>
+</body>
+</html>
+

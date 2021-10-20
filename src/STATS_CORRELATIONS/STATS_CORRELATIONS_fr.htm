@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=utf-8">
+<title>Corrélations bivariées avec intervalles de confiance</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  --> 
+  </style>
+</head>
+<body>
+<h1>Corrélations bivariées avec intervalles de confiance</h1>
+<p>Cette procédure calcule les corrélations bivariées et les intervalles de confiance asymptotiques (Fisher). Les variables dotées d'un niveau de mesure nominal sont exclues.</p>
+
+
+<p><span class="runinhead">Variables</span>
+Choisissez les variables d'une matrice de corrélation carrée (la corrélation de chaque variable avec chacune des autres variables est générée).</p>
+
+<p><span class="runinhead">Avec variables</span>
+Si les variables sont placées dans cette liste, seules les corrélations des variables de la première liste avec les variables répertoriées ici sont générées. Par exemple, si la première liste contient cinq variables et la deuxième en contient deux, dix corrélations sont générées.
+</p>
+
+
+<p><span class="runinhead">Niveau de confiance</span>
+Entrez le niveau de confiance souhaité pour l'intervalle de confiance sous forme de pourcentage.
+</p>
+
+<p><span class="runinhead">Estimation de l'intervalle de confiance</span>
+Choisissez Fisher pour utiliser la transformation Fisher basée sur la normalité approximative de la transformation Z de la corrélation. Choisissez Bootstrap pour calculer
+les intervalles de confiance du bootstrap.</p>
+<p class="bullet">&bull;Le bootstrap requiert l'option de bootstrap sous licence.
+Autrement, une erreur se produit.</p>
+
+
+<p><span class="runinhead">Valeurs utilisateur manquantes</span>
+Choisissez la suppression par paire pour maximiser l'utilisation des données ou la suppression liste par liste pour une base d'observations cohérente pour chaque corrélation.
+Vous pouvez également choisir de traiter les valeurs manquantes comme valides.
+Les valeurs manquantes du système (sysmis) sont toujours exclues.
+</p>
+
+<p>
+SPLIT FILES est pris en charge.
+</p>
+<p>Merci à Bruce Weaver pour son aide sur cette procédure. </p>
+
+<h2>Fonctions supplémentaires</h2>
+Exécutez la commande<br>
+STATS CORRELATIONS /HELP.<br>
+ou, dans Statistics version 23 ou ultérieure, appuyez sur la touche F1 avec le curseur dans la commande pour afficher l'aide sur la syntaxe.
+</p>
+<p>TO et ALL sont pris en charge dans les listes de variables de Statistics 23 (ou version ultérieure). </p>
+
+
+<h2>Conditions requises</h2>
+Cette commande requiert le plug-in de programmabilité Python.
+</p>
+  <hr>
+  <p style="font-size:80%;">
+ Copyright IBM Corp. 2016</p>
+</body>
+</html>
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content=
+
+"text/html; charset=utf-8">
+
+  <title>2 変量の相関分析 (信頼区間あり)</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  --> 
+  </style>
+</head>
+<body>
+<h1>2 変量の相関分析 (信頼区間あり)</h1>
+<p>このプロシージャは、2 変量の相関および漸近 (Fisher) 信頼区間を計算します。尺度が名義型である変数は除外されます。</p>
+
+
+<p><span class="runinhead">変数</span> 正方相関行列の変数を選択します。すなわち、各変数と他の変数との相関行列を計算します。</p>
+
+<p><span class="runinhead">対象とする変数</span> このリストに変数を指定すると、
+最初のリストにある変数と、このリストにある変数との相関のみが計算されます。例えば、最初のリストに 5 つの変数があり、2 番目のリストに 2 つの変数がある場合は、10 件の相関が計算されます。
+</p>
+
+
+<p><span class="runinhead">信頼度レベル</span> 信頼区間に対して要求する信頼性のレベルをパーセンテージで入力します。
+</p>
+
+<p><span class="runinhead">信頼区間の推定</span> 相関の Z 変換の近似的正規性に基づく Fisher 変換を使用するには「Fisher」を選択します。ブートストラップ信頼区間を計算するには「ブートストラップ」を選択します。</p>
+<p class="bullet">&bull;ブートストラップを使用するには、ブートストラップ オプションのライセンスが必要です。
+そうでなければ、エラーが発生します。</p>
+
+
+<p><span class="runinhead">ユーザー欠損値</span> データの使用を最大化するには「ペアごとの削除」を選択します。
+各相関に対して一貫したケース基準を使用するには「リストごとの削除」を選択します。
+別の方法として、欠損値を有効な値として扱うように選択することもできます。
+システム欠損値 (sysmis) は常に除外されます。
+</p>
+
+<p>
+SPLIT FILES がサポートされています。
+</p>
+<p>このプロシージャは Bruce Weaver の支援を受けて作成されました。</p>
+
+<h2>その他の機能</h2>
+次のコマンドを実行します。<br>
+STATS CORRELATIONS /HELP<br>
+Statistics バージョン 23 以降では、コマンドにカーソルを合わせて F1 キーを押すと、
+シンタックスのヘルプが表示されます。
+</p>
+<p>TO および ALL は、Statistics 23 以降の変数リストでサポートされています。</p>
+
+
+<h2>要件</h2>
+このコマンドには Python Programmability プラグインが必要です。
+</p>
+  <hr>
+  <p style="font-size:80%;">
+ Copyright IBM Corp. 2016</p>
+</body>
+</html>
+
