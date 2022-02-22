@@ -3,7 +3,7 @@
 # *
 # * IBM SPSS Products: Statistics Common
 # *
-# * (C) Copyright IBM Corp. 1989, 2020
+# * (C) Copyright IBM Corp. 1989, 2022
 # *
 # * US Government Users Restricted Rights - Use, duplication or disclosure
 # * restricted by GSA ADP Schedule Contract with IBM Corp. 
@@ -14,12 +14,21 @@
 """STATS CORRELATIONS extension command"""
 
 __author__ =  'JKP'
-__version__=  '1.0.0'
+__version__=  '1.0.2'
 
 # history
 # 08-jul-2016 original version
+# 08-feb-2022 honor pivot table variable display options
 
-
+# debugging
+        # makes debug apply only to the current thread
+#try:
+    #import wingdbstub
+    #import threading
+    #wingdbstub.Ensure()
+    #wingdbstub.debugger.SetDebugThreads({threading.get_ident(): 1})
+#except:
+    #pass
 
 
 import spss, spssaux, spssdata
@@ -186,7 +195,7 @@ def display(variables, withvars, stats, matnames, clevel, missing, inclusion):
     tbl.SetCategories(col1, [CellText.String(_("Correlation")), CellText.String(_("Count")), 
         CellText.String(_("Lower C.I.")), CellText.String(_("Upper C.I.")), CellText.String(_("Notes"))])
     
-    
+    vardict = spssaux.VariableDict()
     for vcount, s in enumerate(stats):
         for i, vv in enumerate(vlist):
             j = i + (withvars is not None and len(variables))
@@ -194,8 +203,10 @@ def display(variables, withvars, stats, matnames, clevel, missing, inclusion):
                 rows = copy.copy(s.splitvars)
             else:
                 rows = []                
-            rows.append(s.variable)
-            rows.append(CellText.String(vv))
+            ###rows.append(s.variable)
+            rows.append(CellText.VarName(vardict[s.variable.toString().rstrip()].VariableIndex))
+            vvitem = vardict[vv].VariableIndex
+            rows.append(CellText.VarName(vvitem))     # 2/9/2022
             if s.ns[j].toNumber() > 10:
                 note = ""
             elif s.ns[j].toNumber() <= 3:
