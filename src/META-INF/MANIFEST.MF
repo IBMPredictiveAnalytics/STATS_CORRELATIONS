@@ -1,4 +1,5 @@
 Name: STATS CORRELATIONS
+Display-Name: Pairwise Correlations with Confidence Intervals
 Dialog-Specs: STATS_CORRELATIONS.spd
 Command-Specs: STATS_CORRELATIONS.xml
 Code-Files: STATS_CORRELATIONS.py
